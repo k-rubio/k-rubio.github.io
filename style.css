@@ -1,12 +1,23 @@
-header {
-	background:#F97316;
+body{
+    background: #F5F5F5;
 }
-nav {
-	background:#1F2937;
+header{
+    background: #1F2937;
+    
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin: 20px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
 }
-main {
-	background: #F5F5F5;
+nav{
+    background:#1F2937;
+    border-bottom:3px solid #F97316;
 }
-section {
-	background: #2563EB;
+.card{
+    background:white;
 }
