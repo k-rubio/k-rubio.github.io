@@ -1,23 +1,83 @@
 body{
-    background: #F5F5F5;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+a{
+    text-decoration: none;
+    color: #F5F5F5;
+}
+
 header{
+    display: flex;
+    min-height: 60px;
     background: #1F2937;
-    
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    height: 50px;
+    margin-right: 20px;
+}
+
+nav a{
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+nav a:hover{
+    color:#F97316;
+}
+
+/* Ocultar checkbox */
+#menu-toggle{
+    display: none;
+}
+
+/* Ocultar hamburguesa en escritorio */
+.hamburger{
+    display: none;
+    font-size: 30px;
     color: white;
-
-    padding: 20px;
-
-    border-radius: 10px;
-
-    margin: 20px;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    cursor: pointer;
 }
-nav{
-    background:#1F2937;
-    border-bottom:3px solid #F97316;
-}
-.card{
-    background:white;
+
+@media (max-width: 700px){
+
+    header{
+        flex-wrap: wrap;
+    }
+
+    /* Mostrar icono hamburguesa */
+    .hamburger{
+        display: block;
+    }
+
+    /* Ocultar menú inicialmente */
+    nav{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        background: #111827;
+    }
+
+    nav a{
+        display: block;
+        padding: 15px;
+        border-top: 1px solid #374151;
+    }
+
+    /* Mostrar menú al pulsar */
+    #menu-toggle:checked ~ nav{
+        display: flex;
+    }
 }
