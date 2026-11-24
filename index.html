@@ -1,35 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<link rel="stylesheet" href="style.css">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Montallantas y Exostos Dangie</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Montallantas y Exostos Dangie</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <a href="#" class="logo">
-        <img src="img/Logo.png" alt="Logo">
-        <h5 class="nombre-empresa">Montallantas y Exostos Dangie</h5>
-    </a>
+    <header>
+        <a href="#" class="logo">
+            <img src="img/Logo.png" alt="Logo">
+            <h5 class="nombre-empresa">Montallantas y Exostos Dangie</h5>
+        </a>
 
-    <!-- Botón hamburguesa -->
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="hamburger">☰</label>
+        <!-- Botón hamburguesa -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
 
-    <nav>
-        <a href="">Inicio</a>
-        <a href="">Quienes Somos</a>
-        <a href="">Contacto</a>
-    </nav>
-</header>
-	<main>	
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Quienes Somos</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
 
-	</main>
+    <main>
+        <section class="contenedor-slider">
+            <div class="slider" id="slider-principal">
+                <button id="prev" aria-label="Anterior">&#10094;</button>
 
+                <ul id="slides">
+                    <li><img src="img/Taller/1.jpeg" alt="Promoción 1"></li>
+                    <li><img src="img/Taller/2.jpeg" alt="Promoción 2"></li>
+                    <li><img src="img/Taller/3.jpeg" alt="Promoción 3"></li>
+                    <li><img src="img/Taller/4.jpeg" alt="Promoción 4"></li>
+                </ul>
 
-	<footer>
-		
-	</footer>
+                <button id="next" aria-label="Siguiente">&#10095;</button>
+
+                <!-- Indicadores de puntos -->
+                <div class="indicadores" id="indicadores"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

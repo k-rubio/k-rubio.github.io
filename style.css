@@ -1,83 +1,218 @@
-body{
+* {
+    box-sizing: border-box;
+}
+
+body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #F3F4F6;
 }
 
-a{
+a {
     text-decoration: none;
     color: #F5F5F5;
 }
 
-header{
+/* ================= HEADER ================= */
+header {
     display: flex;
     min-height: 60px;
     background: #1F2937;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 200;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
 }
 
-.logo img{
+.logo img {
     height: 50px;
-    margin-right: 20px;
+    margin-right: 15px;
 }
 
-nav a{
+.nombre-empresa {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+nav a {
     font-weight: 600;
-    padding-right: 10px;
+    padding-right: 15px;
+    transition: color 0.2s ease;
 }
 
-nav a:hover{
-    color:#F97316;
+nav a:hover {
+    color: #F97316;
 }
 
-/* Ocultar checkbox */
-#menu-toggle{
+#menu-toggle {
     display: none;
 }
 
-/* Ocultar hamburguesa en escritorio */
-.hamburger{
+.hamburger {
     display: none;
     font-size: 30px;
     color: white;
     cursor: pointer;
 }
 
-@media (max-width: 700px){
+/* ================= SLIDER ESTILO BANNER ================= */
+.contenedor-slider {
+    width: 100%;
+    padding: 5px 24px;
+}
 
-    header{
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1400px; /* Ancho panorámico en pantallas grandes */
+    height: 440px;     /* Altura ideal tipo banner horizontal */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: #111827;
+}
+
+.slider ul {
+    display: flex;
+    width: 400%; /* El JS lo ajusta automáticamente si agregas más fotos */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.slider li {
+    width: 25%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.slider img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Llena todo el banner sin dejar franjas vacías */
+    object-position: center;
+}
+
+/* Botones laterales estilo pestaña como Claro */
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(255, 255, 255, 0.85);
+    color: #1F2937;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 14px 10px;
+    cursor: pointer;
+    z-index: 100;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+#prev:hover,
+#next:hover {
+    background: #F97316; /* Naranja a juego con el hover de tu menú */
+    color: #FFFFFF;
+}
+
+#prev {
+    left: 0;
+    border-radius: 0 8px 8px 0;
+}
+
+#next {
+    right: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+/* Puntos indicadores inferiores */
+.indicadores {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+}
+
+.punto {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.punto.activo {
+    width: 26px; /* Se alarga tipo píldora cuando está activo */
+    border-radius: 10px;
+    background: #F97316;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .slider {
+        height: 320px;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
         flex-wrap: wrap;
     }
 
-    /* Mostrar icono hamburguesa */
-    .hamburger{
+    .hamburger {
         display: block;
     }
 
-    /* Ocultar menú inicialmente */
-    nav{
+    nav {
         display: none;
         width: 100%;
         flex-direction: column;
         text-align: center;
         background: #111827;
+        margin-top: 10px;
     }
 
-    nav a{
+    nav a {
         display: block;
         padding: 15px;
         border-top: 1px solid #374151;
+        padding-right: 15px;
     }
 
-    /* Mostrar menú al pulsar */
-    #menu-toggle:checked ~ nav{
+    #menu-toggle:checked ~ nav {
         display: flex;
+    }
+
+    .contenedor-slider {
+        padding: 10px 12px;
+    }
+
+    .slider {
+        height: 210px; /* Proporción panorámica cómoda en celular */
+        border-radius: 12px;
+    }
+
+    #prev,
+    #next {
+        font-size: 16px;
+        padding: 10px 7px;
     }
 }
