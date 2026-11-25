@@ -2,11 +2,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
-font-family: sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #111827; /* Mismo tono oscuro de la base del footer */
+    background-color: #111827;
     overflow-x: hidden;
     min-height: 100dvh;
     display: flex;
@@ -64,16 +68,20 @@ nav a:hover {
     font-size: 28px;
     color: white;
     cursor: pointer;
+    user-select: none;
 }
+
 main {
     flex: 1 0 auto;
     width: 100%;
-    background-color: #F3F4F6; /* Mantiene el fondo claro del área principal */
+    background-color: #F3F4F6;
+    padding-bottom: 36px;
 }
+
 /* ================= SLIDER ESTILO BANNER ================= */
 .contenedor-slider {
     width: 100%;
-    padding: 12px 24px;
+    padding: 16px 24px 8px;
 }
 
 .slider {
@@ -171,6 +179,110 @@ main {
     background: #F97316;
 }
 
+/* ================= LLAMADO A LA ACCIÓN (CTA) ================= */
+.cta-banner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 24px 12px;
+    text-align: center;
+}
+
+.cta-banner h1 {
+    margin: 0 0 16px;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.3px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #F97316;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 14px 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #EA580C;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(249, 115, 22, 0.45);
+}
+
+/* ================= SECCIÓN SERVICIOS ================= */
+.seccion-servicios {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px 24px 8px;
+}
+
+.seccion-servicios h2 {
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.tarjeta-servicio {
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #E5E7EB;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icono-servicio {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 50%;
+    background-color: #1F2937;
+    color: #F97316;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icono-servicio svg {
+    width: 24px;
+    height: 24px;
+}
+
+.info-servicio h3 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.info-servicio p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #4B5563;
+    line-height: 1.4;
+}
+
 /* ================= FOOTER COMPACTO ================= */
 .site-footer {
     background-color: #1F2937;
@@ -183,17 +295,17 @@ main {
 .footer-contenido {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 18px 24px;
+    padding: 22px 24px;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1.2fr;
-    align-items: center;
+    align-items: start;
     gap: 20px;
 }
 
 .footer-marca {
     display: flex;
     align-items: center;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .footer-marca img {
@@ -207,7 +319,7 @@ main {
 }
 
 .footer-col h6 {
-    margin: 0 0 6px;
+    margin: 0 0 8px;
     font-size: 0.82rem;
     color: #F97316;
     text-transform: uppercase;
@@ -215,10 +327,23 @@ main {
 }
 
 .footer-col p {
-    margin: 0 0 4px;
+    margin: 0 0 6px;
     font-size: 0.85rem;
     line-height: 1.4;
     color: #D1D5DB;
+}
+
+.footer-dato {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-icono {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    color: #F97316;
 }
 
 .footer-links {
@@ -243,7 +368,7 @@ main {
 .footer-base {
     background-color: #111827;
     text-align: center;
-    padding: 8px 16px;
+    padding: 10px 16px;
     font-size: 0.78rem;
     color: #9CA3AF;
 }
@@ -302,7 +427,7 @@ main {
     }
 
     .contenedor-slider {
-        padding: 10px 12px;
+        padding: 12px 12px 6px;
     }
 
     .slider {
@@ -316,9 +441,66 @@ main {
         padding: 10px 7px;
     }
 
+    .cta-banner {
+        padding: 14px 14px 8px;
+    }
+
+    .cta-banner h1 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .btn-whatsapp {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    .seccion-servicios {
+        padding: 18px 12px 6px;
+    }
+
+    .seccion-servicios h2 {
+        font-size: 1.2rem;
+        margin-bottom: 14px;
+    }
+
+    .grid-servicios {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .tarjeta-servicio {
+        padding: 12px;
+        gap: 10px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .icono-servicio {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        margin-top: 2px;
+    }
+
+    .icono-servicio svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .info-servicio h3 {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+
+    .info-servicio p {
+        font-size: 0.74rem;
+        line-height: 1.3;
+    }
+
     .footer-contenido {
         grid-template-columns: 1fr;
-        padding: 16px 16px;
+        padding: 16px;
         gap: 14px;
     }
 }
