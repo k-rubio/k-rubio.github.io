@@ -3,11 +3,14 @@
 }
 
 html, body {
-    font-family: sans-serif;
+font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F3F4F6;
+    background-color: #111827; /* Mismo tono oscuro de la base del footer */
     overflow-x: hidden;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -62,7 +65,11 @@ nav a:hover {
     color: white;
     cursor: pointer;
 }
-
+main {
+    flex: 1 0 auto;
+    width: 100%;
+    background-color: #F3F4F6; /* Mantiene el fondo claro del área principal */
+}
 /* ================= SLIDER ESTILO BANNER ================= */
 .contenedor-slider {
     width: 100%;
@@ -168,8 +175,9 @@ nav a:hover {
 .site-footer {
     background-color: #1F2937;
     color: #F5F5F5;
-    margin-top: 24px;
+    margin-top: auto;
     border-top: 3px solid #F97316;
+    width: 100%;
 }
 
 .footer-contenido {
