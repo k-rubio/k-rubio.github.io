@@ -2,11 +2,12 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F3F4F6;
+    overflow-x: hidden;
 }
 
 a {
@@ -33,12 +34,12 @@ header {
 
 .logo img {
     height: 50px;
-    margin-right: 15px;
+    margin-right: 12px;
 }
 
 .nombre-empresa {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 nav a {
@@ -57,7 +58,7 @@ nav a:hover {
 
 .hamburger {
     display: none;
-    font-size: 30px;
+    font-size: 28px;
     color: white;
     cursor: pointer;
 }
@@ -65,14 +66,14 @@ nav a:hover {
 /* ================= SLIDER ESTILO BANNER ================= */
 .contenedor-slider {
     width: 100%;
-    padding: 5px 24px;
+    padding: 12px 24px;
 }
 
 .slider {
     position: relative;
     width: 100%;
-    max-width: 1400px; /* Ancho panorámico en pantallas grandes */
-    height: 440px;     /* Altura ideal tipo banner horizontal */
+    max-width: 1400px;
+    height: 440px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 16px;
@@ -82,7 +83,7 @@ nav a:hover {
 
 .slider ul {
     display: flex;
-    width: 400%; /* El JS lo ajusta automáticamente si agregas más fotos */
+    width: 400%;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -100,11 +101,10 @@ nav a:hover {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Llena todo el banner sin dejar franjas vacías */
+    object-fit: cover;
     object-position: center;
 }
 
-/* Botones laterales estilo pestaña como Claro */
 #prev,
 #next {
     position: absolute;
@@ -123,7 +123,7 @@ nav a:hover {
 
 #prev:hover,
 #next:hover {
-    background: #F97316; /* Naranja a juego con el hover de tu menú */
+    background: #F97316;
     color: #FFFFFF;
 }
 
@@ -137,7 +137,6 @@ nav a:hover {
     border-radius: 8px 0 0 8px;
 }
 
-/* Puntos indicadores inferiores */
 .indicadores {
     position: absolute;
     bottom: 14px;
@@ -160,9 +159,89 @@ nav a:hover {
 }
 
 .punto.activo {
-    width: 26px; /* Se alarga tipo píldora cuando está activo */
+    width: 26px;
     border-radius: 10px;
     background: #F97316;
+}
+
+/* ================= FOOTER COMPACTO ================= */
+.site-footer {
+    background-color: #1F2937;
+    color: #F5F5F5;
+    margin-top: 24px;
+    border-top: 3px solid #F97316;
+}
+
+.footer-contenido {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-marca {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.footer-marca img {
+    height: 36px;
+    margin-right: 10px;
+}
+
+.footer-marca h5 {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.footer-col h6 {
+    margin: 0 0 6px;
+    font-size: 0.82rem;
+    color: #F97316;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-col p {
+    margin: 0 0 4px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #D1D5DB;
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.footer-col a {
+    color: #D1D5DB;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+    color: #F97316;
+}
+
+.footer-base {
+    background-color: #111827;
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 0.78rem;
+    color: #9CA3AF;
+}
+
+.footer-base p {
+    margin: 0;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -170,11 +249,25 @@ nav a:hover {
     .slider {
         height: 320px;
     }
+
+    .footer-contenido {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 700px) {
     header {
         flex-wrap: wrap;
+        padding: 10px 14px;
+    }
+
+    .logo img {
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .nombre-empresa {
+        font-size: 0.92rem;
     }
 
     .hamburger {
@@ -192,9 +285,8 @@ nav a:hover {
 
     nav a {
         display: block;
-        padding: 15px;
+        padding: 14px;
         border-top: 1px solid #374151;
-        padding-right: 15px;
     }
 
     #menu-toggle:checked ~ nav {
@@ -206,7 +298,7 @@ nav a:hover {
     }
 
     .slider {
-        height: 210px; /* Proporción panorámica cómoda en celular */
+        height: 210px;
         border-radius: 12px;
     }
 
@@ -214,5 +306,11 @@ nav a:hover {
     #next {
         font-size: 16px;
         padding: 10px 7px;
+    }
+
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        padding: 16px 16px;
+        gap: 14px;
     }
 }
